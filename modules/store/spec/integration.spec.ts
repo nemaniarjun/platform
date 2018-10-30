@@ -187,7 +187,7 @@ describe('ngRx Integration spec', () => {
       const todo$ = store.pipe(select(getTodosById, 2));
       todo$.subscribe(todo => {
         if (testCase === 1) {
-          expect(todo).toEqual(undefined);
+          expect(todo as any).toEqual(undefined);
         } else if (testCase === 2) {
           expect(todo).toEqual({
             id: 2,
@@ -223,7 +223,7 @@ describe('ngRx Integration spec', () => {
       const todo$ = store.pipe(select(getTodosById, 2));
       todo$.subscribe(todo => {
         if (testCase === 1) {
-          expect(todo).toEqual(undefined);
+          expect(todo as any).toEqual(undefined);
         } else if (testCase === 2) {
           expect(todo).toEqual({
             id: 2,
@@ -259,7 +259,7 @@ describe('ngRx Integration spec', () => {
       const todo$ = store.pipe(select(getTodosById, { id: 2 }));
       todo$.subscribe(todo => {
         if (testCase === 1) {
-          expect(todo).toEqual(undefined);
+          expect(todo as any).toEqual(undefined);
         } else if (testCase === 2) {
           expect(todo).toEqual({
             id: 2,
